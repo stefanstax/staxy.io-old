@@ -1,0 +1,65 @@
+import { testData } from "@/context/faq-data";
+import { Box, Typography } from "@mui/material";
+import classNames from "classnames";
+import { useState } from "react";
+
+const FAQ = ({ data, className }) => {
+  if (!data?.length) {
+    data = testData;
+  }
+  const [isOpen, setIsOpen] = useState({});
+
+  const handleClick = (index) => {
+    setIsOpen((prevState) => ({
+      ...prevState,
+      [index]: !prevState[index],
+    }));
+  };
+
+  const classes = classNames(className);
+
+  const renderFAQ = data.map((entry, index) => {
+    const isItemOpen = isOpen[index] || false;
+    return (
+      <>
+        {entry?.question?.length > 5 && entry?.answer?.length > 5 && (
+          <Box key={index} className="w-full my-2 rounded drop-shadow-md">
+            <Typography
+              component="h5"
+              className={`text-[20px] ${
+                isItemOpen
+                  ? "bg-babyBlue hover:bg-byzantine"
+                  : "bg-byzantine hover:bg-babyBlue"
+              } p-2 text-white font-bold hover:underline transition-all cursor-pointer ${
+                isItemOpen ? "rounded-t" : "rounded"
+              } `}
+              onClick={() => handleClick(index)}
+            >
+              {entry?.question}
+            </Typography>
+            <Box
+              className={`${
+                isItemOpen ? "block" : "hidden"
+              } p-2 py-4 bg-slate-50 rounded-b`}
+            >
+              <Typography component="p">{entry?.answer}</Typography>
+            </Box>
+          </Box>
+        )}
+      </>
+    );
+  });
+  return (
+    <Box className={classes}>
+      <Typography component="h2" className="text-[40px] font-black">
+        FAQ
+      </Typography>
+      <Typography component="p" className="text-[20px] mb-8">
+        Below you can find questions I received in the previous weeks.
+      </Typography>
+      {renderFAQ}
+    </Box>
+  );
+};
+
+export default FAQ;
