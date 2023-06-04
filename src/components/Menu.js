@@ -11,6 +11,7 @@ const Menu = () => {
         height={80}
         alt=""
       />
+      {/* // todo Menu items go here */}
     </nav>
   );
 };

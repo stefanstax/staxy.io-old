@@ -35,7 +35,7 @@ const CalendlyCTA = ({
           to={link}
           // cta
           ctaOutSource={ctaOutSource}
-          className="w-fit min-w-[300px] p-4 rounded-[20px] bg-formula text-batman formula-shadow hover:animate-pulse text-[40px] text-center uppercase no-underline"
+          className="w-fit min-w-[300px] p-4 rounded-[20px] bg-formula text-batman formula-shadow text-[40px] text-center uppercase no-underline hover:animate-pulse"
         >
           {label}
         </InBoundLink>

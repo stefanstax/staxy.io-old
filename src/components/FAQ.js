@@ -2,6 +2,7 @@ import { testData } from "@/context/faq-data";
 import { Box, Typography } from "@mui/material";
 import classNames from "classnames";
 import { useState } from "react";
+import InBoundLink from "./InBoundLink";
 
 const FAQ = ({ data, className }) => {
   if (!data?.length) {
@@ -58,6 +59,13 @@ const FAQ = ({ data, className }) => {
         Below you can find questions I received in the previous weeks.
       </Typography>
       {renderFAQ}
+      <InBoundLink
+        to="https://calendy.com/staxy"
+        className="text-[14px] font-light no-underline hover:opacity-75 transition-all"
+        outSource
+      >
+        Click here to schedule a call for more...
+      </InBoundLink>
     </Box>
   );
 };
