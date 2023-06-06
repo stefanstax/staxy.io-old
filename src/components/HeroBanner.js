@@ -39,14 +39,16 @@ const HeroBanner = ({
           >
             {ctaLabel}
           </InBoundLink>
-          <InBoundLink
-            secondary
-            to={secondaryLink}
-            outSource={outSource}
-            className="w-full md:w-fit flex-auto min-h-[50px] flex justify-center items-center"
-          >
-            {secondaryLabel}
-          </InBoundLink>
+          {secondaryLink && (
+            <InBoundLink
+              secondary
+              to={secondaryLink}
+              outSource={outSource}
+              className="w-full md:w-fit flex-auto min-h-[50px] flex justify-center items-center"
+            >
+              {secondaryLabel}
+            </InBoundLink>
+          )}
         </Box>
       </Box>
     </Box>

@@ -7,14 +7,16 @@ const InBoundLink = ({
   cta,
   secondary,
   currentPath,
+  footerLink,
   to,
   activeClassName,
   outSource,
   ctaOutSource,
 }) => {
   const classes = classNames(
-    `font-black p-2 rounded underline transition-all cursor-pointer`,
     className,
+    footerLink && `font-light py-2 px-0 hover:opacity-75`,
+    `font-black p-2 rounded underline transition-all cursor-pointer`,
     currentPath === to && activeClassName,
     cta &&
       !secondary &&

@@ -16,6 +16,7 @@ import { steps } from "@/context/steps-data";
 import { faq } from "@/context/faq-data";
 import ImageBanner from "@/components/ImageBanner";
 import ScrollerCarousel from "@/components/ScrollerCarousel";
+import Footer from "@/components/Footer";
 
 export default function Home() {
   const Context = createContext();
@@ -53,9 +54,6 @@ export default function Home() {
           subtitle="Where you'll able to sell courses. Organize Events. Create Groups. Create Forums. Have personalized member profiles. And so much more!"
           ctaLabel="Schedule a Call"
           ctaLink="https://calendly.com/staxy"
-          secondaryLabel="Keep Exploring"
-          secondaryLink="/contact"
-          // outSource
           ctaOutSource
           className="mt-24"
           regularPadding
@@ -128,7 +126,7 @@ export default function Home() {
         </Box>
         <CalendlyCTA
           title="Ready to go live?"
-          description="You do not need to know C from CODE to make your dream."
+          description="You do not need to know P from PROGRAMMING to make your dream."
           link="https://calendly.com/staxy"
           label="schedule"
           ctaOutSource
@@ -136,6 +134,7 @@ export default function Home() {
         />
         <FAQ className="w-full max-w-[600px] mx-auto my-24 px-4" data={faq} />
       </Container>
+      <Footer />
     </main>
   );
 }
