@@ -20,7 +20,7 @@ import "../app/globals.css";
 import SharedLayout from "@/components/SharedLayout";
 
 const HomePage = () => {
-  const context = createContext();
+  const Context = createContext();
 
   const renderSteps = steps.map((step) => {
     const {

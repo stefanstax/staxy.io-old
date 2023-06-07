@@ -7,7 +7,7 @@ import { testData } from "@/context/features-data";
 
 const FeaturesCarousel = ({ options, data, className }) => {
   const classes = classNames(
-    `w-3/12 flex flex-col h-full gap-[10px] justify-end items-center rounded bg-white shadow-lg shadow-[#17171720] p-5 transition-all hover:bg-pond cursor-grab hover:text-white`
+    `w-full md:w-3/12 flex flex-col h-full gap-[10px] justify-end items-center rounded bg-white shadow-lg shadow-[#17171720] p-5 transition-all hover:bg-pond cursor-grab hover:text-white`
   );
 
   const parentClasses = classNames(className, `w-full my-24`);
