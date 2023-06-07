@@ -5,7 +5,7 @@
       "@/components": ["./components/*"],
       "@/assets": ["./assets/*"],
       "@/context": ["./context/*"],
-      "@/mdx": ["/mdx/*"]
+      "@/mdx": ["./app/mdx/*"]
     }
   }
 }

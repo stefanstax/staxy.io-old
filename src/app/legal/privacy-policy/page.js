@@ -2,7 +2,7 @@
 import SharedLayout from "@/components/SharedLayout";
 import { Container, Typography } from "@mui/material";
 import PrivacyPolicyDocument from "../../mdx/privacy-policy.mdx";
-import "./page.css";
+import "../page.css";
 
 const PrivacyPolicy = () => {
   return (

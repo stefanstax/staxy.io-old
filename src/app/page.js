@@ -18,7 +18,6 @@ import ScrollerCarousel from "@/components/ScrollerCarousel";
 import SectionTitle from "@/components/SectionTitle";
 import "../app/globals.css";
 import SharedLayout from "@/components/SharedLayout";
-import Link from "next/link";
 
 const HomePage = () => {
   const context = createContext();

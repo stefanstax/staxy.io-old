@@ -9,7 +9,7 @@ const ImageBanner = ({ src, className }) => {
       className={`w-full flex justify-center items-center mx-auto md:p-10 ${classes}`}
     >
       <Image
-        className="w-full h-full object-fit object-contain md:rounded-[40px] glass-angle"
+        className="w-full h-full max-w-[1140px] object-fit object-contain md:rounded-[40px] glass-angle"
         src={src}
         width={1280}
         height={650}
