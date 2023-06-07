@@ -1,4 +1,4 @@
-import { Container } from "@mui/material";
+import { Box } from "@mui/material";
 import Footer from "./Footer";
 import Menu from "./Menu";
 import "../app/globals.css";
@@ -7,9 +7,9 @@ const SharedLayout = ({ children }) => {
   return (
     <main className="w-full min-h-screen">
       <Menu />
-      <Container fixed className="min-w-full p-0">
+      <Box fluid className="min-w-full max-w-[1140px]">
         {children}
-      </Container>
+      </Box>
       <Footer />
     </main>
   );

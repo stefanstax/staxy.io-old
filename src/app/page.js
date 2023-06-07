@@ -3,7 +3,7 @@ import BackgroundNumber from "@/components/BackgroundNumber";
 import FeaturesCarousel from "@/components/FeaturesCarousel";
 import HeroBanner from "@/components/HeroBanner";
 import MediaAndText from "@/components/MediaAndText";
-import { Box, Container } from "@mui/material";
+import { Box } from "@mui/material";
 import { createContext } from "react";
 import CalendlyCTA from "@/components/CalendlyCTA";
 import Disclaimer from "@/components/Disclaimer";
@@ -47,7 +47,7 @@ const HomePage = () => {
   });
   return (
     <SharedLayout>
-      <Container fixed className="p-0 min-w-full">
+      <Box fluid className="min-w-full max-w-[1140px]">
         <HeroBanner
           title="Imagine a platform"
           subtitle="Where you'll able to sell courses. Organize Events. Create Groups. Create Forums. Have personalized member profiles. And so much more!"
@@ -120,7 +120,7 @@ const HomePage = () => {
           containerClass="min-h-[600px] flex justify-center items-center"
         />
         <FAQ className="w-full max-w-[600px] mx-auto my-24 px-4" data={faq} />
-      </Container>
+      </Box>
     </SharedLayout>
   );
 };
