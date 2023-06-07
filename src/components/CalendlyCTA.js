@@ -13,11 +13,11 @@ const CalendlyCTA = ({
 }) => {
   const containerClasses = classNames(
     containerClass,
-    `w-full bg-batman text-center`
+    `w-full bg-gradient-to-b from-matte from-[67%] to-transparent to-[32%] text-center`
   );
   const boxClasses = classNames(
     boxClass,
-    `w-full max-w-[600px] my-8 rounded-[20px] drop-shadow-2xl px-4 py-10 text-white mx-auto flex flex-col justify-center items-center`
+    `w-full max-w-[600px] my-8 rounded-[20px] text-beige drop-shadow-2xl px-4 py-10 mx-auto flex flex-col justify-center items-center`
   );
   return (
     <Box className={containerClasses}>
@@ -35,7 +35,7 @@ const CalendlyCTA = ({
           to={link}
           // cta
           ctaOutSource={ctaOutSource}
-          className="w-fit min-w-[300px] p-4 rounded-[20px] bg-formula text-batman formula-shadow text-[40px] text-center uppercase no-underline hover:animate-pulse"
+          className="w-fit min-w-[300px] p-4 rounded-[20px] bg-byzantine text-beige byzantine-shadow text-[40px] text-center uppercase no-underline hover:animate-pulse"
         >
           {label}
         </InBoundLink>

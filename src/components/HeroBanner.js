@@ -31,14 +31,16 @@ const HeroBanner = ({
           {subtitle}
         </Typography>
         <Box className="w-full flex flex-wrap gap-[10px] justify-center items-center">
-          <InBoundLink
-            cta
-            to={ctaLink}
-            ctaOutSource={ctaOutSource}
-            className="w-full md:w-fit flex-auto min-h-[50px] flex justify-center items-center"
-          >
-            {ctaLabel}
-          </InBoundLink>
+          {ctaLink && (
+            <InBoundLink
+              cta
+              to={ctaLink}
+              ctaOutSource={ctaOutSource}
+              className="w-full md:w-fit max-w-[300px] flex-auto min-h-[50px] flex justify-center items-center"
+            >
+              {ctaLabel}
+            </InBoundLink>
+          )}
           {secondaryLink && (
             <InBoundLink
               secondary

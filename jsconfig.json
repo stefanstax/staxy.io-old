@@ -4,7 +4,8 @@
       "@/*": ["./src/*"],
       "@/components": ["./components/*"],
       "@/assets": ["./assets/*"],
-      "@/context": ["./context/*"]
+      "@/context": ["./context/*"],
+      "@/mdx": ["/mdx/*"]
     }
   }
 }

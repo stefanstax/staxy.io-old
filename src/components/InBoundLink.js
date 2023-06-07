@@ -15,13 +15,11 @@ const InBoundLink = ({
 }) => {
   const classes = classNames(
     className,
-    footerLink && `font-light py-2 px-0 hover:opacity-75`,
-    `font-black p-2 rounded underline transition-all cursor-pointer`,
+    footerLink && `font-light py-2 px-0`,
+    `font-black p-2 rounded underline transition-all cursor-pointer hover:opacity-75`,
     currentPath === to && activeClassName,
-    cta &&
-      !secondary &&
-      `bg-formula text-[#171717] hover:bg-purpy hover:text-whiteSmoke`,
-    secondary && !cta && `bg-byzantine text-white hover:bg-babyBlue`
+    cta && !secondary && `bg-byzantine text-white`,
+    secondary && !cta && `bg-purpy text-white`
   );
   return (
     <Link

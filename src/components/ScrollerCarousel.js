@@ -7,7 +7,7 @@ import { testData } from "@/context/features-data";
 
 const ScrollerCarousel = ({ options, data, className }) => {
   const classes = classNames(
-    `w-3/12 flex gap-[10px] h-full gap-[10px] justify-center items-center rounded bg-white shadow-lg shadow-[#17171720] p-5 hover:bg-[#171717] opacity-25 hover:opacity-100  hover:text-white transition-all `
+    `w-3/12 flex gap-[10px] h-full gap-[10px] justify-center items-center rounded bg-white shadow-lg shadow-[#17171720] cursor-grab p-5 hover:bg-pond opacity-25 hover:opacity-100  hover:text-white transition-all `
   );
 
   const parentClasses = classNames(className, `w-full`);

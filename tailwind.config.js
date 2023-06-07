@@ -7,19 +7,23 @@ module.exports = {
   ],
   theme: {
     fontFamily: {
-      gilroy: ["Gilroy", "sans-serif"],
+      gilroy: ["Staxy", "sans-serif"],
     },
     extend: {
       colors: {
         formula: "#C7F860",
-        batman: "#131616",
-        byzantine: "#3457d5",
         babyBlue: "#1f75f3",
         whiteSmoke: "#F4F6FC",
         white: "#fff",
         whiteShade: "#f9f9f9",
-        purpy: "#7D2AE8",
         purpyHover: "#6b20ce",
+
+        matte: "#131616",
+        graphit: "#303249",
+        byzantine: "#4555b5",
+        pond: "#317BAB",
+        purpy: "#8B91DE",
+        beige: "#FFEFE8",
       },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",

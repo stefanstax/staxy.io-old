@@ -3,8 +3,7 @@ import BackgroundNumber from "@/components/BackgroundNumber";
 import FeaturesCarousel from "@/components/FeaturesCarousel";
 import HeroBanner from "@/components/HeroBanner";
 import MediaAndText from "@/components/MediaAndText";
-import Menu from "@/components/Menu";
-import { Box, Container, Typography } from "@mui/material";
+import { Box, Container } from "@mui/material";
 import { createContext } from "react";
 import CalendlyCTA from "@/components/CalendlyCTA";
 import Disclaimer from "@/components/Disclaimer";
@@ -16,10 +15,13 @@ import { steps } from "@/context/steps-data";
 import { faq } from "@/context/faq-data";
 import ImageBanner from "@/components/ImageBanner";
 import ScrollerCarousel from "@/components/ScrollerCarousel";
-import Footer from "@/components/Footer";
+import SectionTitle from "@/components/SectionTitle";
+import "../app/globals.css";
+import SharedLayout from "@/components/SharedLayout";
+import Link from "next/link";
 
-export default function Home() {
-  const Context = createContext();
+const HomePage = () => {
+  const context = createContext();
 
   const renderSteps = steps.map((step) => {
     const {
@@ -44,10 +46,8 @@ export default function Home() {
       />
     );
   });
-
   return (
-    <main className="w-full min-h-screen">
-      <Menu />
+    <SharedLayout>
       <Container fixed className="p-0 min-w-full">
         <HeroBanner
           title="Imagine a platform"
@@ -80,22 +80,15 @@ export default function Home() {
           data={features}
         />
 
-        <ImageBanner
-          src={StaxyPlatformOverview}
-          className="my-24 bg-byzantine"
-        />
+        <ImageBanner src={StaxyPlatformOverview} className="my-24 bg-purpy" />
         <BackgroundNumber
           className="my-24"
           revenue="176,000"
           label="Annual Revenue"
           description="My clients are killing it! And I believe you should too."
         />
-        <Typography
-          component="h2"
-          className="max-w-[600px] mx-auto px-4 text-[55px] underline text-center font-black mt-8"
-        >
-          Project Features
-        </Typography>
+        <SectionTitle title="Enrolment Steps" />
+
         <FeaturesCarousel
           options={{
             perPage: 3,
@@ -115,12 +108,7 @@ export default function Home() {
           }}
           data={features}
         />
-        <Typography
-          component="h2"
-          className="max-w-[600px] mx-auto px-4 text-[55px] underline text-center font-black mt-8"
-        >
-          Enrolment Steps
-        </Typography>
+        <SectionTitle title="Enrolment Steps" />
         <Box className="px-4 w-full max-w-[600px] mx-auto flex flex-col justify-center items-center gap-[10px]">
           {renderSteps}
         </Box>
@@ -134,7 +122,8 @@ export default function Home() {
         />
         <FAQ className="w-full max-w-[600px] mx-auto my-24 px-4" data={faq} />
       </Container>
-      <Footer />
-    </main>
+    </SharedLayout>
   );
-}
+};
+
+export default HomePage;

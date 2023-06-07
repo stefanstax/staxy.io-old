@@ -1,0 +1,27 @@
+.customFormatting * {
+    margin: 1rem 0px;
+}
+
+.customFormatting :where(h1, h2) {
+    font-weight: 900;
+}
+
+.customFormatting h3 {
+    margin: 3rem 0px;
+}
+
+.customFormatting :where(h3,h4,h5,h6) {
+    font-weight: 600;
+}
+
+.customFormatting ul {
+    padding: 0.15rem 1rem;
+}
+
+.customFormatting li {
+    list-style-type: circle;
+}
+
+.customFormatting a {
+    text-decoration: underline;
+}

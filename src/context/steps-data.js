@@ -6,8 +6,7 @@ import StepFiveIcon from "@/assets/images/moderation-icon.png";
 import StepSixIcon from "@/assets/images/chat-icon.png";
 import StepSevenIcon from "@/assets/images/step-seven-icon.png";
 
-const highlighOdds =
-  "bg-byzantine text-white rounded-[20px] drop-shadow-sm p-4";
+const highlighOdds = "bg-purpy text-white rounded-[20px] drop-shadow-sm p-4";
 
 export const steps = [
   {

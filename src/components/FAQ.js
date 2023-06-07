@@ -28,10 +28,8 @@ const FAQ = ({ data, className }) => {
             <Typography
               component="h5"
               className={`text-[20px] ${
-                isItemOpen
-                  ? "bg-babyBlue hover:bg-byzantine"
-                  : "bg-byzantine hover:bg-babyBlue"
-              } p-2 text-white font-bold hover:underline transition-all cursor-pointer ${
+                isItemOpen ? "bg-pond hover:bg-purpy" : "bg-purpy hover:bg-pond"
+              } p-2 text-beige font-bold hover:underline transition-all cursor-pointer ${
                 isItemOpen ? "rounded-t" : "rounded"
               } `}
               onClick={() => handleClick(index)}

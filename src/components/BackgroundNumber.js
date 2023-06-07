@@ -30,7 +30,7 @@ const BackgroundNumber = ({
         component="h4"
         variant="p"
         color={colorRevenue ? `lightGray` : "transparent"}
-        className={`text-[80px] lg:text-[300px] text-byzantine z-[-1] font-[100] background--number-stroke lg:absolute transition-all lg:top-1/2 lg:left-1/2 lg:transform lg:-translate-x-1/2 lg:-translate-y-1/2`}
+        className={`text-[80px] lg:text-[300px] text-purpy z-[-1] font-[100] background--number-stroke lg:absolute transition-all lg:top-1/2 lg:left-1/2 lg:transform lg:-translate-x-1/2 lg:-translate-y-1/2`}
       >
         €{revenue}
       </Typography>
