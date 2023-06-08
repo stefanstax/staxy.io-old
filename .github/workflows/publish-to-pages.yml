@@ -6,8 +6,8 @@ on:
 
 env:
   NODE_AUTH_TOKEN: ${{ secrets.PAGES_DEPLOYMENT }}
-  SUPABASE_ACCESS_TOKEN: ${{ secrets.SUPABASE_ACCESS_TOKEN }}
-  PROJECT_ID: ${{ secrets.PROJECT_ID }}
+  NEXT_PUBLIC_SUPABASE_URL: ${{ secrets.NEXT_PUBLIC_SUPABASE_URL }}
+  NEXT_PUBLIC_SUPABASE_ANON_KEY: ${{ secrets.NEXT_PUBLIC_SUPABASE_ANON_KEY }}
 
 permissions:
   contents: read
@@ -68,8 +68,6 @@ jobs:
             ${{ runner.os }}-nextjs-${{ hashFiles('**/package-lock.json', '**/yarn.lock') }}-
       - name: Install dependencies 🥑
         run: ${{ steps.detect-package-manager.outputs.manager }} ${{ steps.detect-package-manager.outputs.command }}
-      - name: Deploy Supabase
-        run: supabase functions deploy --project-ref $PROJECT_ID
       - name: Build with Next.js 🍄
         run: ${{ steps.detect-package-manager.outputs.runner }} next build
       - name: Static HTML export with Next.js 🥯
