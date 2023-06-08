@@ -69,10 +69,10 @@ jobs:
       - name: Install dependencies 🥑
         run: ${{ steps.detect-package-manager.outputs.manager }} ${{ steps.detect-package-manager.outputs.command }}
       - name: Deploy Supabase
-      - uses: supabase/setup-cli@v1
-        with:
-          version: latest
-      - run: supabase functions deploy --project-ref $PROJECT_ID
+        uses: supabase/setup-cli@v1
+          with:
+            version: latest
+        run: supabase functions deploy --project-ref $PROJECT_ID
       - name: Build with Next.js 🍄
         run: ${{ steps.detect-package-manager.outputs.runner }} next build
       - name: Static HTML export with Next.js 🥯
