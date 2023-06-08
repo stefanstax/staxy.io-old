@@ -2,8 +2,8 @@ import StepOneIcon from "@/assets/images/step-one-icon.png";
 import StepTwoIcon from "@/assets/images/step-two-icon.png";
 import StepThreeIcon from "@/assets/images/step-three-icon.png";
 import StepFourIcon from "@/assets/images/step-four-icon.png";
-import StepFiveIcon from "@/assets/images/moderation-icon.png";
-import StepSixIcon from "@/assets/images/chat-icon.png";
+import StepFiveIcon from "@/assets/images/step-five-icon.png";
+import StepSixIcon from "@/assets/images/step-six-icon.png";
 import StepSevenIcon from "@/assets/images/step-seven-icon.png";
 
 const highlighOdds = "bg-purpy text-white rounded-[20px] drop-shadow-sm p-4";

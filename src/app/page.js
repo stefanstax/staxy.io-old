@@ -12,7 +12,6 @@ import FAQ from "@/components/FAQ";
 
 import { features } from "@/context/features-data";
 import { steps } from "@/context/steps-data";
-import { faq } from "@/context/faq-data";
 import ImageBanner from "@/components/ImageBanner";
 import ScrollerCarousel from "@/components/ScrollerCarousel";
 import SectionTitle from "@/components/SectionTitle";
@@ -65,10 +64,11 @@ const HomePage = () => {
             arrows: false,
             pagination: false,
             autoplay: "playing",
-            interval: "1500",
+            interval: "750",
             lazyLoad: true,
-            flickPower: 1,
+            drag: false,
             gap: "2rem",
+            padding: "2rem",
             slideFocus: true,
             breakpoints: {
               640: {
@@ -119,7 +119,7 @@ const HomePage = () => {
           ctaOutSource
           containerClass="min-h-[600px] flex justify-center items-center"
         />
-        <FAQ className="w-full max-w-[600px] mx-auto my-24 px-4" data={faq} />
+        <FAQ className="w-full max-w-[600px] mx-auto my-24 px-4" />
       </Box>
     </SharedLayout>
   );
