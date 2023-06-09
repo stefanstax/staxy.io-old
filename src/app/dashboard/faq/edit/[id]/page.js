@@ -54,12 +54,12 @@ const Faq = () => {
         >
           <Controller
             name="question"
-            label="Question"
             control={control}
             rules={{ required: true }}
             render={({ field }) => (
               <TextField
                 className={inputClasses}
+                label="Question"
                 defaultValue={faq[0]?.question}
                 {...field}
               />
@@ -67,12 +67,12 @@ const Faq = () => {
           />
           <Controller
             name="answer"
-            label="Answer"
             control={control}
             rules={{ required: true }}
             render={({ field }) => (
               <TextField
                 className={inputClasses}
+                label="Answer"
                 defaultValue={faq[0]?.answer}
                 {...field}
               />
