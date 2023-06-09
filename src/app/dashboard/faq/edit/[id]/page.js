@@ -38,7 +38,7 @@ const Faq = () => {
   );
 
   return (
-    <SharedLayout>
+    <SharedLayout className="flex justify-center items-center">
       {loading && (
         <Loaders
           loading={loading}
