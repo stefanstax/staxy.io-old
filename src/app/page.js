@@ -86,7 +86,7 @@ const HomePage = () => {
           label="Annual Revenue"
           description="My clients are killing it! And I believe you should too."
         />
-        <SectionTitle title="Enrolment Steps" />
+        <SectionTitle title="Platform Features" subtitle="( some of many )" />
 
         <FeaturesCarousel
           options={{
