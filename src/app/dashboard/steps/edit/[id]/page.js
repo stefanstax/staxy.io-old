@@ -3,22 +3,35 @@ import SharedLayout from "@/components/SharedLayout";
 import { MenuItem, Select, TextField, setRef } from "@mui/material";
 import classNames from "classnames";
 import { useForm, Controller } from "react-hook-form";
-import { supabase } from "../../../../../supabase";
+import { supabase } from "../../../../../../supabase";
 import { useEffect, useState, useRef } from "react";
 import Image from "next/image";
 import useImage from "@/hooks/useImage";
+import { useParams } from "next/navigation";
 
 const StepsCreate = () => {
+  const [step, setSteps] = useState({});
   const { control, register, handleSubmit, reset } = useForm({
     defaultValues: {
-      title: "",
-      description: "",
-      mediaSrc: null,
-      mediaFirst: false,
-      className: "",
-      endBlock: false,
+      title: step[0]?.title,
+      description: step[0]?.description,
+      mediaFirst: step[0]?.mediaFirst,
+      mediaSrc: step[0]?.mediaSrc,
+      className: step[0]?.className,
+      endBlock: step[0]?.className,
     },
   });
+
+  const params = useParams();
+
+  const getStep = async () => {
+    const { data } = await supabase.from("steps").select().eq("id", params?.id);
+    setSteps(data);
+  };
+
+  useEffect(async () => {
+    getStep();
+  }, []);
 
   const onSubmit = async (data) => {
     // try {
@@ -72,6 +85,7 @@ const StepsCreate = () => {
           rules={{ required: true }}
           render={({ field }) => (
             <TextField
+              defaultValue={step[0]?.description}
               className={inputClasses}
               label="Description"
               {...field}
@@ -91,11 +105,10 @@ const StepsCreate = () => {
           render={({ field }) => (
             <Select
               className={inputClasses}
-              defaultValue="yes"
+              defaultValue={step[0]?.mediaFirst}
               label="Image Order"
               {...field}
             >
-              <MenuItem value="">Select ...</MenuItem>
               <MenuItem value="yes">Yes</MenuItem>
               <MenuItem value="no">No</MenuItem>
             </Select>
@@ -108,7 +121,7 @@ const StepsCreate = () => {
           render={({ field }) => (
             <TextField
               className={inputClasses}
-              defaultValue="yes"
+              defaultValue={step[0]?.className}
               label="Custom Class Names"
               {...field}
             />
@@ -121,7 +134,7 @@ const StepsCreate = () => {
           render={({ field }) => (
             <Select
               className={inputClasses}
-              defaultValue="yes"
+              value={step[0]?.endBlock}
               label="End Block"
               {...field}
             >
