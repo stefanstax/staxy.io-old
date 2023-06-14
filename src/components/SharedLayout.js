@@ -7,7 +7,7 @@ import classNames from "classnames";
 const SharedLayout = ({ children, className, maxWidth }) => {
   const classes = classNames(className);
   return (
-    <main className="w-full min-h-screen">
+    <main className="w-full min-h-screen px-4 lg:px-0">
       <Menu />
       <Box
         fluid

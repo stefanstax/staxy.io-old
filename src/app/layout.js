@@ -1,3 +1,4 @@
+import Script from "next/script";
 import "./globals.css";
 
 const metadata = {
@@ -7,8 +8,18 @@ const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
-      <body className={`font-gilroy bg-[#ebebef]`}>{children}</body>
-    </html>
+    <>
+      <head>
+        <Script
+          async
+          id="cookieyes"
+          type="text/javascript"
+          src="https://cdn-cookieyes.com/client_data/2b6b0ab2b70ad7a6db85e0c8/script.js"
+        ></Script>
+      </head>
+      <html lang="en">
+        <body className={`font-gilroy bg-[#ebebef]`}>{children}</body>
+      </html>
+    </>
   );
 }
