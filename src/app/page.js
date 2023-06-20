@@ -59,17 +59,21 @@ const HomePage = () => {
         <ScrollerCarousel
           options={{
             type: "loop",
+            drag: "free",
             perPage: 6,
             perMove: 1,
             arrows: false,
             pagination: false,
-            autoplay: "playing",
-            interval: "750",
             lazyLoad: true,
-            drag: false,
+            autoStart: true,
+            autoScroll: {
+              pauseOnHover: false,
+              pauseOnFocus: false,
+              rewind: false,
+              speed: 1,
+            },
             gap: "2rem",
             padding: "2rem",
-            slideFocus: true,
             breakpoints: {
               640: {
                 perPage: 1,

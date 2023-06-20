@@ -4,6 +4,7 @@ import { Splide, SplideSlide } from "@splidejs/react-splide";
 import "@splidejs/react-splide/css/core";
 import Image from "next/image";
 import { testData } from "@/context/features-data";
+import { AutoScroll } from "@splidejs/splide-extension-auto-scroll";
 
 const ScrollerCarousel = ({ options, data, className }) => {
   const classes = classNames(
@@ -74,6 +75,7 @@ const ScrollerCarousel = ({ options, data, className }) => {
       options={{
         ...options,
       }}
+      extensions={{ AutoScroll }}
     >
       {renderFeatures}
     </Splide>

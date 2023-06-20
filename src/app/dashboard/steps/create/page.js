@@ -89,16 +89,15 @@ const StepsCreate = () => {
           control={control}
           rules={{ required: true }}
           render={({ field }) => (
-            <Select
+            <TextField
+              select
               className={inputClasses}
-              defaultValue="yes"
-              label="Image Order"
+              label="Image Goes First"
               {...field}
             >
-              <MenuItem value="">Select ...</MenuItem>
-              <MenuItem value="yes">Yes</MenuItem>
-              <MenuItem value="no">No</MenuItem>
-            </Select>
+              <MenuItem value={true}>Yes</MenuItem>
+              <MenuItem value={false}>No</MenuItem>
+            </TextField>
           )}
         />
         <Controller
@@ -119,15 +118,15 @@ const StepsCreate = () => {
           control={control}
           rules={{ required: true }}
           render={({ field }) => (
-            <Select
+            <TextField
+              select
               className={inputClasses}
-              defaultValue="yes"
               label="End Block"
               {...field}
             >
-              <MenuItem value="yes">Yes</MenuItem>
-              <MenuItem value="no">No</MenuItem>
-            </Select>
+              <MenuItem value={true}>Yes</MenuItem>
+              <MenuItem value={false}>No</MenuItem>
+            </TextField>
           )}
         />
         <input className={buttonClasses} type="submit" />
