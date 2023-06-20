@@ -130,8 +130,8 @@ const StepsCreate = () => {
           )}
           {imageUrl.includes("null") && (
             <Typography component="p" className="my-4 font-[100]">
-              Record doesn't have a valid image or not image at all. Use field
-              above to upload a new one.
+              Record doesn&apos;t have a valid image or not image at all. Use
+              field above to upload a new one.
             </Typography>
           )}
           {!imageUrl?.includes("null") && (
@@ -180,7 +180,7 @@ const StepsCreate = () => {
             label="End Block"
           >
             <MenuItem value={true}>Block is end block</MenuItem>
-            <MenuItem value={false}>Block isn't end block</MenuItem>
+            <MenuItem value={false}>Block isn&apos;t end block</MenuItem>
           </TextField>
 
           <input className={buttonClasses} type="submit" />
