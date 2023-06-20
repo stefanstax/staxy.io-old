@@ -17,6 +17,7 @@
     "@mui/material": "^5.13.2",
     "@next/mdx": "^13.4.4",
     "@splidejs/react-splide": "^0.7.12",
+    "@splidejs/splide-extension-auto-scroll": "^0.5.3",
     "@supabase/supabase-js": "^2.24.0",
     "@types/mdx": "^2.0.5",
     "autoprefixer": "10.4.14",

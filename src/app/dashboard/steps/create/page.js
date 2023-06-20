@@ -1,16 +1,19 @@
 "use client";
 import SharedLayout from "@/components/SharedLayout";
-import { MenuItem, Select, TextField } from "@mui/material";
+import { MenuItem, Select, TextField, setRef } from "@mui/material";
 import classNames from "classnames";
 import { useForm, Controller } from "react-hook-form";
 import { supabase } from "../../../../../supabase";
+import { useEffect, useState, useRef } from "react";
+import Image from "next/image";
+import useImage from "@/hooks/useImage";
 
 const StepsCreate = () => {
-  const { control, handleSubmit, reset } = useForm({
+  const { control, register, handleSubmit, reset } = useForm({
     defaultValues: {
       title: "",
       description: "",
-      mediaSrc: "",
+      mediaSrc: null,
       mediaFirst: false,
       className: "",
       endBlock: false,
@@ -18,11 +21,31 @@ const StepsCreate = () => {
   });
 
   const onSubmit = async (data) => {
-    const { error } = await supabase
-      .from("faq")
-      .insert({ question: data?.question, answer: data?.answer });
+    // try {
+    // * First upload image to the storage bucket
+    const imageName = data?.mediaSrc[0]?.name;
+    await supabase.storage
+      .from("staxy_resources")
+      .upload(`images/${imageName}`, data?.mediaSrc[0], {
+        cacheControl: "3600",
+        upsert: false,
+      });
+    // * If that is successful proceed with making a post request to the steps table
+    // todo (data) params loss
+    await supabase.from("steps").insert({
+      title: data?.title,
+      description: data?.description,
+      mediaSrc: imageName,
+      mediaFirst: data?.mediaFirst,
+      className: data?.className,
+      endBlock: data?.endBlock,
+    });
+    // })
+    // * Reset form
     reset();
   };
+
+  // const imageUrl = useImage(uploadedImage);
 
   const inputClasses = classNames(`w-full min-w-[250px]`);
   const buttonClasses = classNames(
@@ -55,29 +78,55 @@ const StepsCreate = () => {
             />
           )}
         />
-        <Controller
-          name="mediaSrc"
-          control={control}
-          rules={{ required: true }}
-          render={({ field }) => (
-            <TextField className={inputClasses} label="Media URL" {...field} />
-          )}
+        <input
+          type="file"
+          label="File Upload"
+          {...register("mediaSrc", { required: true })}
+          accept="image/png"
         />
         <Controller
           name="mediaFirst"
           control={control}
           rules={{ required: true }}
           render={({ field }) => (
-            <Select
+            <TextField
+              select
               className={inputClasses}
-              defaultValue="yes"
-              label="Image Order"
+              label="Image Goes First"
               {...field}
             >
-              <MenuItem value="">Select ...</MenuItem>
-              <MenuItem value="yes">Yes</MenuItem>
-              <MenuItem value="no">No</MenuItem>
-            </Select>
+              <MenuItem value={true}>Yes</MenuItem>
+              <MenuItem value={false}>No</MenuItem>
+            </TextField>
+          )}
+        />
+        <Controller
+          name="className"
+          control={control}
+          rules={{ required: true }}
+          render={({ field }) => (
+            <TextField
+              className={inputClasses}
+              defaultValue="yes"
+              label="Custom Class Names"
+              {...field}
+            />
+          )}
+        />
+        <Controller
+          name="endBlock"
+          control={control}
+          rules={{ required: true }}
+          render={({ field }) => (
+            <TextField
+              select
+              className={inputClasses}
+              label="End Block"
+              {...field}
+            >
+              <MenuItem value={true}>Yes</MenuItem>
+              <MenuItem value={false}>No</MenuItem>
+            </TextField>
           )}
         />
         <input className={buttonClasses} type="submit" />
