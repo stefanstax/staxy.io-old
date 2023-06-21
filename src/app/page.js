@@ -51,7 +51,7 @@ const HomePage = () => {
           title="Imagine a platform"
           subtitle="Where you'll able to sell courses. Organize Events. Create Groups. Create Forums. Have personalized member profiles. And so much more!"
           ctaLabel="Schedule a Call"
-          ctaLink="https://calendly.com/staxy"
+          ctaLink="https://calendly.com/staxy/platform"
           ctaOutSource
           className="mt-24"
           regularPadding
