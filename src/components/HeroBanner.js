@@ -30,7 +30,7 @@ const HeroBanner = ({
         >
           {subtitle}
         </Typography>
-        <Box className="w-full flex flex-wrap gap-[10px] justify-center items-center">
+        <Box className="w-full flex flex-wrap gap-[20px] justify-center items-center">
           {ctaLink && (
             <InBoundLink
               cta

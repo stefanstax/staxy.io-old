@@ -96,7 +96,7 @@ const StepsCreate = () => {
     <SharedLayout className="min-h-[100vh] flex justify-center items-center">
       {loading && (
         <Loaders
-          className="w-full px-4 max-w-[600px] mx-auto justify-center items-center flex flex-col gap-[10px]"
+          className="w-full px-4 max-w-[600px] mx-auto justify-center items-center flex flex-col gap-[20px]"
           loading={loading}
           loaderType="stepsEdit"
         />
@@ -104,7 +104,7 @@ const StepsCreate = () => {
       {!loading && (
         <form
           onSubmit={handleSubmit(onSubmit)}
-          className="w-full px-4 my-48 max-w-[600px] mx-auto justify-center items-center flex flex-col gap-[10px]"
+          className="w-full px-4 my-48 max-w-[600px] mx-auto justify-center items-center flex flex-col gap-[20px]"
         >
           <TextField
             className={inputClasses}

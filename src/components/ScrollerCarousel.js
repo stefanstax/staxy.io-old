@@ -8,7 +8,7 @@ import { AutoScroll } from "@splidejs/splide-extension-auto-scroll";
 
 const ScrollerCarousel = ({ options, data, className }) => {
   const classes = classNames(
-    `w-full md:w-3/12 flex gap-[10px] h-full gap-[10px] justify-center items-center rounded bg-white shadow-lg shadow-[#17171720] p-5 opacity-25`
+    `w-full md:w-3/12 flex gap-[20px] h-full gap-[20px] justify-center items-center rounded bg-white shadow-lg shadow-[#17171720] p-5 opacity-25`
   );
 
   const parentClasses = classNames(className, `w-full`);

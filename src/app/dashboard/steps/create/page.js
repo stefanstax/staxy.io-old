@@ -56,7 +56,7 @@ const StepsCreate = () => {
     <SharedLayout>
       <form
         onSubmit={handleSubmit(onSubmit)}
-        className="w-full px-4 max-w-[600px] my-48 mx-auto justify-center items-center flex flex-col gap-[10px]"
+        className="w-full px-4 max-w-[600px] my-48 mx-auto justify-center items-center flex flex-col gap-[20px]"
       >
         <Controller
           name="title"
