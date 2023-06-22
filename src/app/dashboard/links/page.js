@@ -4,13 +4,14 @@ import { supabase } from "../../../../supabase";
 import { useEffect, useState } from "react";
 import { Box, Typography } from "@mui/material";
 import { Edit, Trash, Trash2 } from "lucide-react";
-import { useRouter } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import InBoundLink from "@/components/InBoundLink";
 import Loaders from "@/components/Loaders";
 
 const Links = () => {
   const [links, setLinks] = useState([]);
   const [loading, setLoading] = useState(true);
+  const pathname = usePathname();
 
   const fetchLinks = async () => {
     const { data } = await supabase.from("links").select();
@@ -41,9 +42,7 @@ const Links = () => {
           </Typography>
         </Box>
         {/* Edit */}
-        <InBoundLink
-          to={`http://localhost:3000/dashboard/links/edit/${link?.id}`}
-        >
+        <InBoundLink to={`${pathname}/edit/${link?.id}`}>
           <Edit
             className={`absolute top-2 ${
               link?.title?.toUpperCase() === "CALENDLY" ? "right-2" : "right-8"
