@@ -5,7 +5,7 @@ const Disclaimer = ({ title, description, className }) => {
   const classes = classNames(className);
   return (
     <Box
-      className={`${classes} flex flex-col justify-center items-center text-center gap-[10px]`}
+      className={`${classes} flex flex-col justify-center items-center text-center gap-[20px]`}
     >
       <Typography className="text-[40px]" fontStyle={"italic"} component="h3">
         {title}

@@ -34,7 +34,7 @@ const FaqDelete = () => {
       <form
         key={faq?.id}
         // onSubmit={handleSubmit(onSubmit)}
-        className="w-full px-4 max-w-[600px] my-32 mx-auto justify-center items-center flex flex-col gap-[10px]"
+        className="w-full px-4 max-w-[600px] my-32 mx-auto justify-center items-center flex flex-col gap-[20px]"
       >
         <Controller
           name="id"

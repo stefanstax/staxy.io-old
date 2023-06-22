@@ -31,15 +31,15 @@ const FaqEdit = () => {
     return (
       <Box
         key={faq?.id}
-        className="w-full bg-white my-4 rounded drop-shadow-lg flex flex-col justify-center items-start gap-[10px]"
+        className="w-full bg-white my-4 rounded drop-shadow-lg flex flex-col justify-center items-start gap-[20px]"
       >
-        <Box className="flex gap-[10px] my-2 px-2">
+        <Box className="flex gap-[20px] my-2 px-2">
           <Typography component="h5" fontWeight="900">
             Question:
           </Typography>
           <Typography>{faq?.question}</Typography>
         </Box>
-        <Box className="flex gap-[10px] my-2 px-2">
+        <Box className="flex gap-[20px] my-2 px-2">
           <Typography component="h5" fontWeight="900">
             Answer:
           </Typography>

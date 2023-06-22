@@ -43,14 +43,14 @@ const Faq = () => {
         <Loaders
           loading={loading}
           loaderType="faqEdit"
-          className="w-full px-4 max-w-[600px] my-32 mx-auto justify-center items-center flex flex-col gap-[10px]"
+          className="w-full px-4 max-w-[600px] my-32 mx-auto justify-center items-center flex flex-col gap-[20px]"
         />
       )}
       {!loading && (
         <form
           key={faq[0]?.id}
           onSubmit={handleSubmit(updateFaq)}
-          className="w-full px-4 max-w-[600px] my-32 mx-auto justify-center items-center flex flex-col gap-[10px]"
+          className="w-full px-4 max-w-[600px] my-32 mx-auto justify-center items-center flex flex-col gap-[20px]"
         >
           <Controller
             name="question"

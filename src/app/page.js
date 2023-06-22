@@ -4,7 +4,7 @@ import FeaturesCarousel from "@/components/FeaturesCarousel";
 import HeroBanner from "@/components/HeroBanner";
 import MediaAndText from "@/components/MediaAndText";
 import { Box } from "@mui/material";
-import { createContext } from "react";
+import { createContext, useEffect, useState } from "react";
 import CalendlyCTA from "@/components/CalendlyCTA";
 import Disclaimer from "@/components/Disclaimer";
 import StaxyPlatformOverview from "@/assets/images/staxy-platform-overview.png";
@@ -17,9 +17,24 @@ import ScrollerCarousel from "@/components/ScrollerCarousel";
 import SectionTitle from "@/components/SectionTitle";
 import "../app/globals.css";
 import SharedLayout from "@/components/SharedLayout";
+import { supabase } from "../../supabase";
 
 const HomePage = () => {
   const Context = createContext();
+  const [calendlyLink, setCalendlyLink] = useState([]);
+
+  // Grab Calendly Link
+  useEffect(() => {
+    fetchCalendlyLink();
+  }, []);
+
+  const fetchCalendlyLink = async () => {
+    const { data: calendlyData } = await supabase.from("links").select();
+    const findCalendlyLink = calendlyData.find(
+      (link) => link?.title?.toLowerCase() === "calendly"
+    );
+    setCalendlyLink(findCalendlyLink?.url);
+  };
 
   const renderSteps = steps.map((step) => {
     const {
@@ -51,7 +66,7 @@ const HomePage = () => {
           title="Imagine a platform"
           subtitle="Where you'll able to sell courses. Organize Events. Create Groups. Create Forums. Have personalized member profiles. And so much more!"
           ctaLabel="Schedule a Call"
-          ctaLink="https://calendly.com/staxy/platform"
+          ctaLink={calendlyLink}
           ctaOutSource
           className="mt-24"
           regularPadding
@@ -112,7 +127,7 @@ const HomePage = () => {
           data={features}
         />
         <SectionTitle title="Enrolment Steps" />
-        <Box className="px-4 w-full max-w-[600px] mx-auto flex flex-col justify-center items-center gap-[10px]">
+        <Box className="px-4 w-full max-w-[600px] mx-auto flex flex-col justify-center items-center gap-[20px]">
           {renderSteps}
         </Box>
         <CalendlyCTA
