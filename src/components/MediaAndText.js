@@ -3,6 +3,7 @@ import Image from "next/image";
 import React from "react";
 import InBoundLink from "./InBoundLink";
 import classNames from "classnames";
+import { Icon } from "@iconify/react";
 
 const MediaAndText = ({
   mediaFirst,
@@ -23,20 +24,19 @@ const MediaAndText = ({
   const endBlockContainer = classNames(
     endBlock ? `justify-between items-center` : `justify-center items-center`
   );
+
   return (
     <Box
       className={`${classes} ${endBlockContainer} w-full my-12 px-4 flex flex-wrap justify-between items-center gap-[40px]`}
     >
       {/* Media */}
       {mediaSrc && (
-        <Image
-          src={mediaSrc}
-          width={500}
-          height={500}
+        <Icon
+          icon={mediaSrc}
+          fontSize={128}
           className={`${endBlockImage} w-3/12 md:w-5/12 drop-shadow-2xl shadow-red-700 max-w-[200px] ${
             mediaFirst ? "order-0" : "order-1"
           }`}
-          alt={mediaAlt}
         />
       )}
       {/* Content */}

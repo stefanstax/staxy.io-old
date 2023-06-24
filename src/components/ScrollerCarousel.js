@@ -5,6 +5,7 @@ import "@splidejs/react-splide/css/core";
 import Image from "next/image";
 import { testData } from "@/context/features-data";
 import { AutoScroll } from "@splidejs/splide-extension-auto-scroll";
+import { Icon } from "@iconify/react";
 
 const ScrollerCarousel = ({ options, data, className }) => {
   const classes = classNames(
@@ -58,12 +59,7 @@ const ScrollerCarousel = ({ options, data, className }) => {
         key={feature?.title}
         className={`${classes} ${feature?.extraClass}`}
       >
-        <Image
-          width={75}
-          height={75}
-          src={feature?.image}
-          alt={`Illustration for ${feature?.title}`}
-        />
+        <Icon icon={feature?.image} fontSize={64} />
         <FeatureLabel label={feature?.title} />
       </SplideSlide>
     );

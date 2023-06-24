@@ -1,51 +1,33 @@
-import CalendarIcon from "@/assets/images/calendar-icon.png";
-import GroupsIcon from "@/assets/images/groups-icon.png";
-import ForumsIcon from "@/assets/images/forums-icon.png";
-import EducationIcon from "@/assets/images/education-icon.png";
-import ProfileIcon from "@/assets/images/profile-icon.png";
-import ModerationIcon from "@/assets/images/step-five-icon.png";
-import ZoomIcon from "@/assets/images/zoom-icon.png";
-import StoreIcon from "@/assets/images/webshop-icon.png";
-import FormsIcon from "@/assets/images/forms-icon.png";
-import ResponsiveIcon from "@/assets/images/responsive-icon.png";
-import GoogleIcon from "@/assets/images/google-icon.png";
-import AdsIcon from "@/assets/images/ads-icon.png";
-import ChatIcon from "@/assets/images/chatai-icon.png";
-import SupportIcon from "@/assets/images/step-six-icon.png";
-import DonationsIcon from "@/assets/images/donations-icon.png";
-import MagicIcon from "@/assets/images/custom-features.png";
-import TickIcon from "@/assets/images/tick-icon.png";
-
 export const features = [
-  { title: "Groups", image: GroupsIcon },
-  { title: "Forums", image: ForumsIcon },
-  { title: "E-Learning", image: EducationIcon },
-  { title: "Lessons", image: EducationIcon },
-  { title: "Quizzes", image: EducationIcon },
-  { title: "Certificates", image: EducationIcon },
-  { title: "Live Streaming", image: EducationIcon },
-  { title: "Profile(s)", image: ProfileIcon },
-  { title: "Event Mangment", image: CalendarIcon },
-  { title: "Moderation", image: ModerationIcon },
-  { title: "Group Zoom Calls", image: ZoomIcon },
-  { title: "Webinar", image: ZoomIcon },
-  { title: "WebShop", image: StoreIcon },
-  { title: "Layered Forms", image: FormsIcon },
-  { title: "Responsive", image: ResponsiveIcon },
-  { title: "Google Friendly", image: GoogleIcon },
-  { title: "Ad Powered Pages", image: AdsIcon },
-  { title: "Personal AI Bot", image: ChatIcon },
-  { title: "Live Chat", image: SupportIcon },
-  { title: "Donations", image: DonationsIcon },
+  { title: "Groups", image: "solar:users-group-rounded-broken" },
+  { title: "Forums", image: "solar:chat-round-call-broken" },
+  { title: "E-Learning", image: "solar:diploma-verified-broken" },
+  { title: "Lessons", image: "solar:ticker-star-broken" },
+  { title: "Quizzes", image: "solar:three-squares-broken" },
+  { title: "Certificates", image: "solar:diploma-broken" },
+  { title: "Live Streaming", image: "solar:crown-line-broken" },
+  { title: "Profile(s)", image: "solar:shield-user-broken" },
+  { title: "Event Mangment", image: "solar:ticket-broken" },
+  { title: "Moderation", image: "solar:shield-broken" },
+  { title: "Group Zoom Calls", image: "solar:chat-round-video-broken" },
+  { title: "Webinar", image: "solar:chat-round-video-broken" },
+  { title: "WebShop", image: "solar:bag-2-broken" },
+  { title: "Layered Forms", image: "solar:layers-broken" },
+  { title: "Responsive", image: "solar:devices-broken" },
+  { title: "Google Friendly", image: "solar:code-square-broken" },
+  { title: "Ad Powered Pages", image: "solar:graph-new-up-broken" },
+  { title: "Personal AI Bot", image: "solar:hashtag-chat-broken" },
+  { title: "Live Chat", image: "solar:chat-square-call-broken" },
+  { title: "Donations", image: "solar:hand-money-broken" },
   {
     title: "Need More",
-    image: MagicIcon,
+    image: "solar:magic-stick-3-broken",
     extraClass: `bg-formula opacity-50`,
   },
 ];
 
 export const testData = [
-  { title: "Test 1", image: TickIcon },
-  { title: "Test 2", image: TickIcon },
-  { title: "Test 3", image: TickIcon },
+  { title: "Test 1", image: "solar:ticket-star-broken" },
+  { title: "Test 2", image: "solar:ticket-star-broken" },
+  { title: "Test 3", image: "solar:ticket-star-broken" },
 ];

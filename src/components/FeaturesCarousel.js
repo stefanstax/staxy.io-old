@@ -2,12 +2,12 @@ import { Typography } from "@mui/material";
 import classNames from "classnames";
 import { Splide, SplideSlide } from "@splidejs/react-splide";
 import "@splidejs/react-splide/css/core";
-import Image from "next/image";
 import { testData } from "@/context/features-data";
+import { Icon } from "@iconify/react";
 
 const FeaturesCarousel = ({ options, data, className }) => {
   const classes = classNames(
-    `w-full md:w-3/12 flex flex-col h-full gap-[20px] justify-end items-center rounded bg-white shadow-lg shadow-[#17171720] p-5 transition-all hover:bg-pond cursor-grab hover:text-white`
+    `group w-full md:w-4/12 lg:w-3/12 xl:w-2/12 flex flex-col h-full gap-[20px] justify-center items-center rounded-[20px] bg-purpy text-white shadow-lg shadow-[#17171720] p-5 transition-all hover:bg-pond cursor-grab hover:text-white`
   );
 
   const parentClasses = classNames(className, `w-full my-24`);
@@ -16,7 +16,7 @@ const FeaturesCarousel = ({ options, data, className }) => {
     return (
       <Typography
         component="span"
-        className="self-end font-black"
+        className="group-hover:text-pond font-black bg-white w-full uppercase p-2 text-purpy text-center rounded drop-shadow-2xl"
         fontStyle="italic"
       >
         {label}
@@ -53,12 +53,7 @@ const FeaturesCarousel = ({ options, data, className }) => {
         key={feature?.title}
         className={`${classes} ${feature?.extraClass}`}
       >
-        <Image
-          width={200}
-          height={200}
-          src={feature?.image}
-          alt={`Illustration for ${feature?.title}`}
-        />
+        <Icon icon={feature?.image} fontSize={64} />
         <FeatureLabel label={feature?.title} />
       </SplideSlide>
     );
