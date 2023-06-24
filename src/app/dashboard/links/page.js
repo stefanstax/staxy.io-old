@@ -3,10 +3,10 @@ import SharedLayout from "@/components/SharedLayout";
 import { supabase } from "../../../../supabase";
 import { useEffect, useState } from "react";
 import { Box, Typography } from "@mui/material";
-import { Edit, Trash, Trash2 } from "lucide-react";
 import { usePathname, useRouter } from "next/navigation";
 import InBoundLink from "@/components/InBoundLink";
 import Loaders from "@/components/Loaders";
+import { Icon } from "@iconify/react";
 
 const Links = () => {
   const [links, setLinks] = useState([]);
@@ -43,7 +43,8 @@ const Links = () => {
         </Box>
         {/* Edit */}
         <InBoundLink to={`${pathname}/edit/${link?.id}`}>
-          <Edit
+          <Icon
+            icon="solar:pen-broken"
             className={`absolute top-2 ${
               link?.title?.toUpperCase() === "CALENDLY" ? "right-2" : "right-8"
             } z-[99] text-slate-800 hover:text-blue-600 transition-all cursor-pointer`}
@@ -52,7 +53,8 @@ const Links = () => {
         </InBoundLink>
         {/* Delete */}
         {link.title?.toUpperCase() != "CALENDLY" && (
-          <Trash2
+          <Icon
+            icon="solar:trash-bin-minimalistic-2-broken"
             onClick={() => deleteOnRequest(link?.id)}
             className="absolute top-2 right-2 z-[99] text-slate-800 hover:text-red-600 transition-all cursor-pointer"
             size={16}
